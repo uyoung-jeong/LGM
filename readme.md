@@ -15,7 +15,7 @@ from lgm.models import LGM
 from lgm.options import AllConfigs
 from mvdream.pipeline_mvdream import MVDreamPipeline
 
-lgm_opt = tyro.cli(AllConfigs)
+lgm_opt = tyro.cli(AllConfigs, args=['big'])
 model = LGM(lgm_opt)
 
 pipe_text = MVDreamPipeline.from_pretrained(

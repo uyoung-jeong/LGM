@@ -18,7 +18,7 @@ setuptools.setup(
         'lpips',
         'matplotlib',
         'pygltflib',
-        'rembg',
+        'rembg[gpu,cli]',
         'rich',
         'safetensors',
         'scikit-image',
