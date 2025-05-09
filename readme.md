@@ -1,7 +1,31 @@
 
 ## Large Multi-View Gaussian Model
 
-This is the official implementation of *LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation*.
+This is the unofficial pip-installable version of *LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation*.
+
+### PIP Install
+```bash
+pip install git+https://github.com/uyoung-jeong/LGM.git
+```
+
+### Usage Example
+```bash
+import tyro
+from lgm.models import LGM
+from lgm.options import AllConfigs
+from mvdream.pipeline_mvdream import MVDreamPipeline
+
+lgm_opt = tyro.cli(AllConfigs)
+model = LGM(lgm_opt)
+
+pipe_text = MVDreamPipeline.from_pretrained(
+        'ashawkey/mvdream-sd2.1-diffusers',
+        torch_dtype=torch.float16,
+        trust_remote_code=True
+    )
+```
+
+Below content is the same as the original repository.
 
 ### [Project Page](https://me.kiui.moe/lgm/) | [Arxiv](https://arxiv.org/abs/2402.05054) | [Weights](https://huggingface.co/ashawkey/LGM) | <a href="https://huggingface.co/spaces/ashawkey/LGM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Gradio%20Demo-Huggingface-orange"></a>
 
