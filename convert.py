@@ -1,4 +1,4 @@
-
+# python convert.py big --test_path workspace_test/bird_rgba.ply
 import os
 import tyro
 import tqdm

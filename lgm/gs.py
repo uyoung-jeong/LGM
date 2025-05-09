@@ -9,7 +9,7 @@ from diff_gaussian_rasterization import (
     GaussianRasterizer,
 )
 
-from core.options import Options
+from .options import Options
 
 import kiui
 
@@ -67,13 +67,13 @@ class GaussianRenderer:
                     sh_degree=0,
                     campos=campos,
                     prefiltered=False,
-                    debug=False,
                 )
 
                 rasterizer = GaussianRasterizer(raster_settings=raster_settings)
 
                 # Rasterize visible Gaussians to image, obtain their radii (on screen).
-                rendered_image, radii, rendered_depth, rendered_alpha = rasterizer(
+                #rendered_image, radii, rendered_depth, rendered_alpha = rasterizer(
+                rendered_image, radii, depth_alpha = rasterizer(
                     means3D=means3D,
                     means2D=torch.zeros_like(means3D, dtype=torch.float32, device=device),
                     shs=None,
@@ -84,6 +84,7 @@ class GaussianRenderer:
                     cov3D_precomp=None,
                 )
 
+                rendered_depth, rendered_alpha = torch.chunk(depth_alpha, 2)
                 rendered_image = rendered_image.clamp(0, 1)
 
                 images.append(rendered_image)

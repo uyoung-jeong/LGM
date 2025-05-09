@@ -1,0 +1,37 @@
+import setuptools
+
+setuptools.setup(
+    name='lgm',
+    version='1.0.0',
+    packages=[
+        'lgm',
+        'mvdream',
+    ],
+    install_requires=[
+        'torch',
+        'numpy',
+        'tyro',
+        'diffusers',
+        'einops',
+        'accelerate',
+        'imageio',
+        'lpips',
+        'matplotlib',
+        'pygltflib',
+        'rembg',
+        'rich',
+        'safetensors',
+        'scikit-image',
+        'scikit-learn',
+        'scipy',
+        'tqdm',
+        'transformers',
+        'trimesh',
+        'kiui',
+        'xatlas',
+        'roma',
+        'plyfile',
+        'ninja',
+        'PyMCubes'
+    ]
+)

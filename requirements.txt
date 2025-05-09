@@ -26,3 +26,6 @@ kiui >= 0.2.3
 xatlas
 roma
 plyfile
+ninja
+PyMCubes
+git+https://github.com/KAIR-BAIR/nerfacc.git@v0.5.2

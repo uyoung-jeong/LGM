@@ -6,9 +6,9 @@ import numpy as np
 import kiui
 from kiui.lpips import LPIPS
 
-from core.unet import UNet
-from core.options import Options
-from core.gs import GaussianRenderer
+from .unet import UNet
+from .options import Options
+from .gs import GaussianRenderer
 
 
 class LGM(nn.Module):
@@ -61,7 +61,7 @@ class LGM(nn.Module):
     def prepare_default_rays(self, device, elevation=0):
         
         from kiui.cam import orbit_camera
-        from core.utils import get_rays
+        from lgm.utils import get_rays
 
         cam_poses = np.stack([
             orbit_camera(elevation, 0, radius=self.opt.cam_radius),
